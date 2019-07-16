@@ -19,17 +19,58 @@ export class ProductDetailComponent implements OnInit {
     this.pageTitle += `: ${id}`;
     this.product = {
       'productId': id,
-      'productName': 'Hammer',
-      'productCode': 'hdk-043',
-      'releaseDate': 'April 30, 2019',
-      'description': 'The hammer',
-      'price': 30.70,
-      'starRating': 4.0,
-      'imageUrl': 'https://images.homedepot-static.com/productImages/4332845b-7fd0-439f-b43b-45bbe58115c9/svn/anvil-claw-hammers-n-g16cav-64_1000.jpg'
-    };
+      'productName': 'Leaf Rake',
+      'productCode': 'gds-0011',
+      'description': 'leaf description,
+      'releaseDate': 'May 21, 2016',
+      'price': 3.9,
+      'starRating': 3.0, 
+      'imageUrl': 'https://images.homedepot-static.com/productImages/6469a9d9-f363-46e9-91e4-06615f491bb4/svn/hdx-leaf-rakes-2915400-64_1000.jpg
+    }
   }
+  'productId': id,
+  'productName': 'Garden cart',
+  'productCode': 'hmn-0048',
+  'description': 'garden cart',
+  'releaseDate': 'May 21, 2016',
+  'price': 8.9,
+  'starRating': 4.0, 
+  'imageUrl': 'https://media.tractorsupply.com/is/image/TractorSupplyCompany/1147050?$456$'
+}
+}
+'productId': id,
+'productName': 'slaw',
+'productCode': 'hio-0048',
+'description': 'food description',
+'releaseDate': 'May 21, 2016',
+'price': 6.9,
+'starRating': 4.0, 
+'imageUrl': 'https://cookieandkate.com/images/2016/01/healthy-slaw-recipe-4.jpg'
+}
+}
 
+'productId': id,
+'productName': 'video game',
+'productCode': 'ert-0048',
+'description': 'description gamers',
+'releaseDate': 'jun 21, 2016',
+'price': 30.9,
+'starRating': 4.0, 
+'imageUrl': 'https://images-na.ssl-images-amazon.com/images/I/61xbMdHonfL._SX679_.jpg'
+}
+}
+'productId': id,
+'productName': 'Hammer',
+'productCode': 'TBX-0048',
+'description': 'cURVED CLAW STEEL HAMMER',
+'releaseDate': 'agost 21, 2016',
+'price': 80.9,
+'starRating': 40.0, 
+'imageUrl': 'https://images.homedepot-static.com/productImages/4332845b-7fd0-439f-b43b-45bbe58115c9/svn/anvil-claw-hammers-n-g16cav-64_1000.jpg'
+}
+}
   onBack(): void {
-    this.router.navigate(['/products']);
+    this._router.navigate(['/products']);
   }
 }
+
