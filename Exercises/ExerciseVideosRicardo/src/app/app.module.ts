@@ -17,6 +17,8 @@ import { ProductModule } from './products/product.module';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'products/:id , component: ProductDetailComponent'}, /*Se logra definiendo /:nombrePropiedad . 
+      Además no estamos limitados a una sola propiedad, sino que podemos pasar más si lo hacemos mediante /:nombrePropiedad/:nombreOtra*/
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),

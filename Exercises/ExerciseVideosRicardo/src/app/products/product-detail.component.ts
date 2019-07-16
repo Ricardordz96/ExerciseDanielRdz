@@ -19,13 +19,13 @@ export class ProductDetailComponent implements OnInit {
     this.pageTitle += `: ${id}`;
     this.product = {
       'productId': id,
-      'productName': 'Leaf Rake',
-      'productCode': 'GDN-0011',
-      'releaseDate': 'March 19, 2016',
-      'description': 'Leaf rake with 48-inch wooden handle.',
-      'price': 19.95,
-      'starRating': 3.2,
-      'imageUrl': 'https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png'
+      'productName': 'Hammer',
+      'productCode': 'hdk-043',
+      'releaseDate': 'April 30, 2019',
+      'description': 'The hammer',
+      'price': 30.70,
+      'starRating': 4.0,
+      'imageUrl': 'https://images.homedepot-static.com/productImages/4332845b-7fd0-439f-b43b-45bbe58115c9/svn/anvil-claw-hammers-n-g16cav-64_1000.jpg'
     };
   }
 
