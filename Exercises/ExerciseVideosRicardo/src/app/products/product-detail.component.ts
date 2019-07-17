@@ -36,7 +36,7 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getProduct(id).subscribe(
        product => this.product = product,
        error => this.errorMessage = <any>error);
-       return  this.product.pipe(filter((product: any) => product.id=== param ));
+      // return  this.product.pipe(filter((product: any) => product.id=== product ));
   }
 
   onBack(): void {
