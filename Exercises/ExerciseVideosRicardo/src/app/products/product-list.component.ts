@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+
 import { IProduct } from './product';
 import { ProductService } from './product.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  pageTitle: string = 'Product List';
-  imageWidth: number = 50;
-  imageMargin: number = 2;
-  showImage: boolean = false;
-  errorMessage: string;
+  pageTitle = 'Product List';
+  imageWidth = 50;
+  imageMargin = 2;
+  showImage = false;
+  errorMessage = '';
 
-  _listFilter: string;
+  _listFilter = '';
   get listFilter(): string {
     return this._listFilter;
   }
@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit {
     this.filteredProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
   }
 
-  filteredProducts: IProduct[];
+  filteredProducts: IProduct[] = [];
   products: IProduct[] = [];
 
   constructor(private productService: ProductService) {
@@ -45,7 +45,6 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
     this.productService.getProducts().subscribe(
       products => {
         this.products = products;

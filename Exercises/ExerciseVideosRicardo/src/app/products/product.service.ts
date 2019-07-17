@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap, map } from 'rxjs/operators';
 
 import { IProduct } from './product';
 
@@ -9,7 +9,7 @@ import { IProduct } from './product';
   providedIn: 'root'
 })
 export class ProductService {
-  private productUrl = 'api/products/products.json';
+  private productUrl = 'assets/products/products.json';
 
   constructor(private http: HttpClient) { }
 
@@ -20,16 +20,22 @@ export class ProductService {
     );
   }
 
+  getProduct(id: number): Observable<IProduct | undefined> {
+    return this.getProducts().pipe(
+      map((products: IProduct[]) => products.find(p => p.productId === id))
+    );
+  }
+
   private handleError(err: HttpErrorResponse) {
-   // en una aplicación del mundo real, podemos enviar el servidor a alguna infraestructura de registro remoto
-       // en lugar de simplemente registrarlo en la consola
+    // in a real world app, we may send the server to some remote logging infrastructure
+    // instead of just logging it to the console
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
-   
+      // A client-side or network error occurred. Handle it accordingly.
       errorMessage = `An error occurred: ${err.error.message}`;
     } else {
-    // El backend devolvió un código de respuesta no exitoso.
-          // El cuerpo de la respuesta puede contener pistas sobre lo que salió mal,
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
       errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
     }
     console.error(errorMessage);
