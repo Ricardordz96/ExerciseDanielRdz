@@ -30,13 +30,14 @@ export class ProductDetailComponent implements OnInit {
     this.productService.getProduct(id).subscribe(
       product => this.product = product,
       error => this.errorMessage = <any>error);
-  }
+      }
 
-  /*getProductDetail(id: number){
+  getProductDetail(id: number){
     this.productService.getProduct(id).subscribe(
        product => this.product = product,
        error => this.errorMessage = <any>error);
-  }*/
+       return  this.product.pipe(filter((product: any) => product.id=== param ));
+  }
 
   onBack(): void {
     this.router.navigate(['/products']);
