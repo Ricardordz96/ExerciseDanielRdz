@@ -26,23 +26,28 @@ export class ProductDetailComponent implements OnInit {
     }
   }
 
-  getProduct(id: number) {
-    this.productService.getProduct(id).subscribe(
-      product => this.product = product,
-      error => this.errorMessage = <any>error);
-      }
-
   getProductDetail(id: number){
     this.productService.getProduct(id).subscribe(
        product => this.product = product,
        error => this.errorMessage = <any>error);
   }
+  getProduct(id: number) {
+    this.productService.getProducts().subscribe(resp=>
+      {
+        
+        this.product=resp.filter((product)=>product.productId===id).map((resp=>resp))[0];
+        console.log(this.product);
+        
+      }
+      );
+      }
 
   /*getProductDetail(id:number){
     return this.product.filter{(product)} => {
       return product.id =id;
     }
   }*/
+
 
   onBack(): void {
     this.router.navigate(['/products']);
